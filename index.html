@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Weterynaria</title>
+	<link rel="stylesheet" href="wet.css">
+	<script>
+		function oblicz()
+		{
+			var il=document.getElementById("ilosc").value;
+			var wybor1=document.getElementById("wybor").value;
+				
+			if (wybor1=="p1")
+			{
+			document.getElementById("wynik").style="color:purple; font-style:italic;"
+			document.getElementById("wynik").innerHTML="Musisz zapłacić: "+200*il+"zł";
+			}
+			else if (wybor1=="p2")
+			{
+			document.getElementById("wynik").style="color:blue;"
+			document.getElementById("wynik").innerHTML="Musisz zapłacić "+40*il+"zł";
+			}
+			else if (wybor1=="p3")
+			{
+			document.getElementById("wynik").style="color:red; font-family:Tahoma;"
+			document.getElementById("wynik").innerHTML="Musisz zapłacić "+100*il+"zł";
+			}
+		}
+		function  w (src, obrazek)
+		{
+			document.getElementById(src).src=obrazek;
+		}
+		function out (src, obrazek)
+		{
+			document.getElementById(src).src=obrazek;
+		}
+		function klik (src, obrazek)
+		{
+			document.getElementById(src).src=obrazek;
+		}
+	</script>
+</head>
+<body>
+	<header>
+		<h1>Vet Veterynarz</h1>
+	</header>
+	<div id="na">
+		<h1>Nawigacja</h1>
+		<ul><h2>
+			<li><a href="kont.html">Kontakt</a></li>
+			<li><a href="my.html">O nas</a></li>
+			<li><a href="galeria.html">Galeria</a></li>
+			<li><a href="index.html">Strona Główna</a></li>
+		</h2></ul>
+	</div>
+	<main>
+		<div class="aa">
+			<img src="kot.jpg" alt="awaria" id="foto" onmouseover="w('foto','krolik.jpg')" onmouseout="out('foto','kot.jpg')" onclick="klik('foto','lis.jpg')"/><br>
+		</div>
+		<div class="cc">
+			<table>
+				<tr>
+					<td>
+						Pon-Pt:
+					</td>
+					<td>
+						10-18 
+					</td>
+				</tr><br><br>
+				<tr>
+					<td>
+						Sob: 
+					</td>
+					<td>
+						13-19 
+					</td>
+				</tr><br><br>	
+				<tr>
+					<td>
+						Niedz:
+					</td>
+					<td>
+						Zamknięte
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="bb">
+			<h2>Zapłata</h2>
+			Ile zwierząt do zabiegu? <input type="number"  id="ilosc"></input>
+			<select id="wybor">
+				<option value="p1"><h3>Szczepienie</h3></option>
+				<option value="p2"><h3>Rutynowe Badanie</h3></option>
+				<option value="p3"><h3>Kastracja</h3></option>
+			</select><br>
+			<input type="submit" value="Płac" onclick="oblicz()"></input>
+			<p id="wynik">Tu bedzie koszt</p>
+		</div>
+		<div class="bb"><br><br>
+			<h2>Lista usług</h2>
+			<ul>
+				<li>Szczepienie-200zł</li>
+				<li>Rutynowe Badanie-40zł</li>
+				<li>Kastracja-100zł</li>
+			</ul>
+		</div>
+	</main>
+	<footer>
+		Autor strony:Dominik Pawlik <br><br>
+	</footer>
+</body>
+</html>
